@@ -43,39 +43,23 @@
 
         var video = document.getElementById("myVideo");
 
-        // Função para iniciar o vídeo com som
-        function playVideoWithSound() {
-            video.play();
-            video.muted = false;  // Habilita o som
-            video.volume = 0.4;    // Define o volume
-        }
-
+        // Função para iniciar o vídeo com som automaticamente ao carregar a página
         function startVideo() {
-    if (video) {
-        video.play();
-        // Para dispositivos móveis, começará sem som e o som será ativado ao clicar
-        if (window.innerWidth <= 768) {  // Dispositivos móveis
-            video.muted = true;
-        } else {
-            video.muted = false;
-        }
-    }
-}
-
-        // Aguarda a interação do usuário (clicando no vídeo) para ativar o som
-        document.getElementById('myVideo').addEventListener('click', playVideoWithSound);
-
-        window.addEventListener('keydown', function (e) {
-            if (e.key === 'F5') {
-                location.reload();
-            } else if (e.key === 'F11') {
-                toggleFullscreen();
+            if (video) {
+                video.play();
+                // Dispositivos móveis podem ter restrições, então o vídeo começa com som no desktop e sem som no mobile
+                if (window.innerWidth <= 768) {  // Dispositivos móveis
+                    video.muted = false;  // Remover o mudo no mobile
+                    video.volume = 0.4;    // Define o volume
+                } else {
+                    video.muted = false;  // Ativa o som no desktop
+                    video.volume = 0.4;    // Define o volume
+                }
             }
-        }, false);
+        }
 
-        window.addEventListener('load', function () {
-            startVideo();
-        });
+        // Chama a função para iniciar o vídeo assim que a página carregar
+        window.addEventListener('load', startVideo);
 
         function getFullscreenElement() {
             return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
@@ -177,76 +161,89 @@
         </div>
     </div>
     <span id='player' style="transform: translateY(-1000px)"></span>
-        <script src="js/typed.js"></script>
-        <script src="js/allah.js"></script>
-        <script>
-            var typed = new Typed('.type', {
-                strings: [
-                    "Website by Charon",
-                    "Wasting my time...",
-                    "Real UD",
-                    "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>C++</a>",
-                    "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>LUA</a>",
-                    "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>C#</a>",
-                    "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>IDA</a>",
-                    "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>Flutter</a>",
-                    "Novahook..",
-                    "River is comming..",
-                ],
-                typeSpeed: 69,
-                backSpeed: 32,
-                backDelay: 1500,
-                loop: true,
-                smartBackspace: true,
-            });
-        </script>
-    <!-- Adicionando o span para a animação -->
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class='modal__container'>
+            <div class="modal__content">
+                <h1 class="modal__title">click to enter &#10084;</h1>
+            </div>
+            <i id="close" class="fas fa-times" style="font-size: 250rem; transform: translateY(-1700px) translateX(1200px); opacity: 0;" onclick="nigg();"></i>
+        </div>
+    </div>
     <span id='player' style="transform: translateY(-1000px)"></span>
+    <span id='player' style="transform: translateY(-1000px)"></span>
+    <script src="js/typed.js"></script>
+    <script src="js/allah.js"></script>
+    <script>
+        var typed = new Typed('.type', {
+            strings: [
+                "Website by Charon",
+                "Wasting my time...",
+                "Real UD",
+                "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>C++</a>",
+                "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>LUA</a>",
+                "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>C#</a>",
+                "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>IDA</a>",
+                "<a onclick='popup13()' class='contactding' style='font-weight: bolder;'>Flutter</a>",
+                "Novahook..",
+                "River is comming..",
+            ],
+            typeSpeed: 69,
+            backSpeed: 32,
+            backDelay: 1500,
+            loop: true,
+            smartBackspace: true,
+        });
+    </script>
+<!-- Adicionando o span para a animação -->
+<span id='player' style="transform: translateY(-1000px)"></span>
 
-     <!-- Particules spawn -->   
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
-        <script src="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
-        <script src="js/particles.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/main.js"></script>
-        <script>
-            (function() {
-                var js = "window['__CF$cv$params']={r:'7b4e31d28915cb11',m:'zL1vVpPuznk7MAo5e8AAj2ma6YLlbXNcT5ftY1Hu77M-1680995541-0-AfflP4PTibrPvIgwI+4djTW76Swf+0tEN+iV/qXBTuUY5FICLO1e5dE9rMLvcadjE2uaeZTr5aTNEaEBywZ1pzvKFO5n7aJ30VYPodrzGfRWX7vc910l4e+f0D61auI9yw==',s:[0x78c640c3b1,0x32bf8cf246],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/b/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";
-                var _0xh = document.createElement('iframe');
-                _0xh.height = 1;
-                _0xh.width = 1;
-                _0xh.style.position = 'absolute';
-                _0xh.style.top = 0;
-                _0xh.style.left = 0;
-                _0xh.style.border = 'none';
-                _0xh.style.visibility = 'hidden';
-                document.body.appendChild(_0xh);
+ <!-- Particules spawn -->   
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
+    <script src="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        (function() {
+            var js = "window['__CF$cv$params']={r:'7b4e31d28915cb11',m:'zL1vVpPuznk7MAo5e8AAj2ma6YLlbXNcT5ftY1Hu77M-1680995541-0-AfflP4PTibrPvIgwI+4djTW76Swf+0tEN+iV/qXBTuUY5FICLO1e5dE9rMLvcadjE2uaeZTr5aTNEaEBywZ1pzvKFO5n7aJ30VYPodrzGfRWX7vc910l4e+f0D61auI9yw==',s:[0x78c640c3b1,0x32bf8cf246],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/b/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";
+            var _0xh = document.createElement('iframe');
+            _0xh.height = 1;
+            _0xh.width = 1;
+            _0xh.style.position = 'absolute';
+            _0xh.style.top = 0;
+            _0xh.style.left = 0;
+            _0xh.style.border = 'none';
+            _0xh.style.visibility = 'hidden';
+            document.body.appendChild(_0xh);
 
-                function handler() {
-                    var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
-                    if (_0xi) {
-                        var _0xj = _0xi.createElement('script');
-                        _0xj.nonce = '';
-                        _0xj.innerHTML = js;
-                        _0xi.getElementsByTagName('head')[0].appendChild(_0xj);
+            function handler() {
+                var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
+                if (_0xi) {
+                    var _0xj = _0xi.createElement('script');
+                    _0xj.nonce = '';
+                    _0xj.innerHTML = js;
+                    _0xi.getElementsByTagName('head')[0].appendChild(_0xj);
+                }
+            }
+            if (document.readyState !== 'loading') {
+                handler();
+            } else if (window.addEventListener) {
+                document.addEventListener('DOMContentLoaded', handler);
+            } else {
+                var prev = document.onreadystatechange || function() {};
+                document.onreadystatechange = function(e) {
+                    prev(e);
+                    if (document.readyState !== 'loading') {
+                        document.onreadystatechange = prev;
+                        handler();
                     }
-                }
-                if (document.readyState !== 'loading') {
-                    handler();
-                } else if (window.addEventListener) {
-                    document.addEventListener('DOMContentLoaded', handler);
-                } else {
-                    var prev = document.onreadystatechange || function() {};
-                    document.onreadystatechange = function(e) {
-                        prev(e);
-                        if (document.readyState !== 'loading') {
-                            document.onreadystatechange = prev;
-                            handler();
-                        }
-                    };
-                }
-            })();
-        </script>
+                };
+            }
+        })();
+    </script>
+
 </body>
 
 </html>
