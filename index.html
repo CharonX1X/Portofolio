@@ -50,6 +50,18 @@
             video.volume = 0.4;    // Define o volume
         }
 
+        function startVideo() {
+    if (video) {
+        video.play();
+        // Para dispositivos móveis, começará sem som e o som será ativado ao clicar
+        if (window.innerWidth <= 768) {  // Dispositivos móveis
+            video.muted = true;
+        } else {
+            video.muted = false;
+        }
+    }
+}
+
         // Aguarda a interação do usuário (clicando no vídeo) para ativar o som
         document.getElementById('myVideo').addEventListener('click', playVideoWithSound);
 
@@ -60,6 +72,10 @@
                 toggleFullscreen();
             }
         }, false);
+
+        window.addEventListener('load', function () {
+            startVideo();
+        });
 
         function getFullscreenElement() {
             return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;

@@ -5,6 +5,70 @@ body {
     user-select: none;
 }
 
+/* Tornando o vídeo responsivo */
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorcer */
+    z-index: -1; /* Faz o vídeo ficar atrás do conteúdo */
+}
+
+/* Ajustes no conteúdo */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Garantir que o conteúdo fique sobre o vídeo */
+}
+
+/* Adicionar padding para espaçamento em dispositivos móveis */
+@media (max-width: 768px) {
+    .center {
+        padding: 20px;
+    }
+
+    h1.outubybig {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .typed {
+        font-size: 1rem;
+    }
+
+    .wrap .button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1.outubybig {
+        font-size: 2rem; /* Ajuste o tamanho do título */
+    }
+
+    p {
+        font-size: 1rem;  /* Ajuste o tamanho do texto */
+    }
+
+    .typed {
+        font-size: 1rem;  /* Ajuste o tamanho do texto animado */
+    }
+
+    .wrap .button {
+        font-size: 1rem; /* Ajuste o tamanho dos botões */
+    }
+}
+
+
 h1,
 p,
 span,
